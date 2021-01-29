@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+}
+
+#grid-lines-wrapper {
+  background: black;
+  margin: 50px auto 0;
+  border: 5px solid black;
+  /* NOTE: EACH TILE IS 20px WIDE */
+
+  /* 1200px wide for 60 tiles, 59 dividing lines that are 2px each, and 10px of vertical border... */
+  /* 1200 + (2 * 59) + 10 = 1328 */
+  width: 1328px;
+  /* 800px high for 40 tiles, 39 dividing lines that are 2px each, and 10px of horizontal border... */
+  /* 800 + (2 * 39) + 10 = 888 */
+  height: 888px;
+}
+
+#game-board {
+  display: grid;
+  grid-template-rows: repeat(40, 20px);
+  grid-template-columns: repeat(60, 20px);
+  gap: 2px;
+  overflow: hidden;
+}
+
+.grid-tile {
+  background: white;
+}
+
+.snake {
+  background: lime;
+}
+
+.apple {
+  background: red;
+}
+
+#gameover-menu {
+  display: none;
+  border: black 10px solid;
+  position: absolute;
+  top: 400px;
+  left: calc(50% - 250px);
+  background: #ccc;
+  border-radius: 5px;
+  text-align: center;
+  padding: 20px 0;
+  margin: auto;
+  width: 500px;
+}
+
+#gameover-menu h2,
+#gameover-menu p {
+  padding-bottom: 20px;
+}
+
+#gameover-menu button {
+  padding: 5px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 3px solid #333;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+#gameover-menu button:hover {
+  background: #ddd;
+}
